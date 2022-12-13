@@ -31,19 +31,25 @@ class Employment(models.Model):
     position = models.CharField(max_length=200)
     start_date = models.DateField()
     end_date = models.DateField()
-    descriptions = models.ForeignKey("Descriptions", related_name="employment", on_delete=models.CASCADE, null=True)
+    descriptions = models.ForeignKey("JobDescriptions", related_name="employment", on_delete=models.CASCADE, null=True)
 
 
 class Projects(models.Model):
     project_name = models.CharField(max_length=200)
     start_date = models.DateField()
     end_date = models.DateField()
-    descriptions = models.ForeignKey("Descriptions", related_name="projects", on_delete=models.CASCADE, null=True)
+    descriptions = models.ForeignKey("ProjectDescriptions", related_name="projects", on_delete=models.CASCADE, null=True)
+
+
 
 
 class Skills(models.Model):
     skills = models.CharField(max_length=200)
 
 
-class Descriptions(models.Model):
+class JobDescriptions(models.Model):
+    description = models.CharField(max_length=250)
+
+
+class ProjectDescriptions(models.Model):
     description = models.CharField(max_length=250)
