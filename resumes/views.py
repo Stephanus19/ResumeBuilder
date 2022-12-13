@@ -17,7 +17,7 @@ def create_resume(request):
         form = ResumeForm(request.POST)
         if form.is_valid():
             resume = form.save(False)
-            resume.purchaser = request.user
+            resume.author = request.user
             resume.save()
             return redirect("home")
     else:
