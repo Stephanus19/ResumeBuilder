@@ -41,8 +41,6 @@ class Projects(models.Model):
     descriptions = models.ForeignKey("ProjectDescriptions", related_name="projects", on_delete=models.CASCADE, null=True)
 
 
-
-
 class Skills(models.Model):
     skills = models.CharField(max_length=200)
 
