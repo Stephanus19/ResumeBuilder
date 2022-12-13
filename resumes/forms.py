@@ -9,6 +9,7 @@ class ResumeForm(ModelForm):
             "name",
             "phone",
             "email",
+            "snalmail",
         ]
 
 
