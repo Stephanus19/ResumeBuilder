@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumes</title>
+  </head>
+  <nav>
+    {% if request.user.is_authenticated %}
+      <ul>
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+        <li><a href="{% url 'create_resume' %}">Create resume</a></li>
+        <li><a href="{% url 'create_education' %}">Create education</a></li>
+        <li><a href="{% url 'create_employment' %}">Create employment</a></li>
+        <li><a href="{% url 'create_project' %}">Create project</a></li>
+        <li><a href="{% url 'create_skills' %}">Create skills</a></li>
+        <li><a href="{% url 'create_job_description' %}">Create Job Description</a></li>
+        <li><a href="{% url 'create_project_description' %}">Create Project Description</a></li>
+        <li><a href="{% url 'home' %}">Home</a></li>
+      </ul>
+    {% else %}
+    <a href="{% url 'signup' %}"> Sign up</a>
+    <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+
+
+  </nav>
+  <body>
+    {% block content %}
+    {% endblock content %}
+  </body>
+</html>

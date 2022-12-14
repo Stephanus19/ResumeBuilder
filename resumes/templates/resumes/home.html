@@ -1,0 +1,29 @@
+<main>
+    <div>
+        <h1>My Projects</h1>
+        <p>
+            {% comment %} <a href ="{% url 'create_project' %}">Create new project</a> {% endcomment %}
+            {% if resume_list %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Number of tasks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for resume in resume_list  %}
+                            <tr>
+                                <td><a href="{% url 'show_resume' resume.id  %}">{{ resume.name }}</a></td>
+                                {% comment %} <td>{{ list.tasks.all|length }} {% endcomment %}
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>You are not assigned to any projects</p>
+            {% endif %}
+    </div>
+</main>
+</body>
+</html>

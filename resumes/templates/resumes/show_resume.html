@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <main>
+        <h1>My Receipts</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Vendor</th>
+                        <th>Total</th>
+                        <th>Tax</th>
+                        <th>Date</th>
+                        <th>Category</th>
+                        <th>Account</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for resume in resume_object list.id %}
+                        <tr>
+                            {% comment %} <td><a hred="{% url 'receipt_details' receipt_objects.id %}"></a> {% endcomment %}
+                            <td>{{ resume.name }}</td>
+                            <td>{{ resume.phone }}</td>
+                            <td>{{ resume.email }}</td>
+                            <td>{{ resume.education.school }}</td>
+                            <td>{{ resume.education.degree}}</td>
+                            <td>{{ resume.education.start_date|date:"m/d/y" }}</td>
+                            <td>{{ resume.education.end_date|date:"m/d/y"}}</td>
+                            <td>{{ resume.employment.company}}</td>
+                            <td>{{ resume.employment.position}}</td>
+                            <td>{{ resume.employment.start_date }}</td>
+                            <td>{{ resume.employment.end_date }}</td>
+                            <td>{{ resume.projects.project_name }}</td>
+                            <td>{{ resume.projects.start_date }}</td>
+                            <td>{{ resume.projects.end_date }}</td>
+                            <td>{{ resume.skills }}</td>
+                            <td>{{ resume.jobdescriptions.job_description }}</td>
+                            <td>{{ resume.projdescriptions.proj_description }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    </main>
+{% endblock content %}
