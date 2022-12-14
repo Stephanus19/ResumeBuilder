@@ -38,7 +38,7 @@ class EmploymentForm(ModelForm):
 
 class ProjectsForm(ModelForm):
     class Meta:
-        model = Projects
+        model = Project
         fields = [
             "resume",
             "project_name",
@@ -49,7 +49,7 @@ class ProjectsForm(ModelForm):
 
 class SkillsForm(ModelForm):
     class Meta:
-        model = Skills
+        model = Skill
         fields = [
             "resume",
             "skills"
@@ -58,7 +58,7 @@ class SkillsForm(ModelForm):
 
 class JobDescriptionsForm(ModelForm):
     class Meta:
-        model = JobDescriptions
+        model = JobDescription
         fields = [
             "employment",
             "job_description",
@@ -67,7 +67,7 @@ class JobDescriptionsForm(ModelForm):
 
 class ProjectDescriptionsForm(ModelForm):
     class Meta:
-        model = ProjDescriptions
+        model = ProjDescription
         fields = [
             "project",
             "proj_description",

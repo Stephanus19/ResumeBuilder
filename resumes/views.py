@@ -15,7 +15,7 @@ def home(request):
 def show_resume(request, id):
     resume = get_object_or_404(Resume, id=id)
     context = {"resume_object": resume}
-    return render(request, 'resumes/detail.html', context)
+    return render(request, 'resumes/show_resume.html', context)
 
 
 @login_required
@@ -39,7 +39,8 @@ def create_education(request):
         form = EducationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("show_resume")
+            id = form.instance.resume.id
+            return redirect("show_resume", id=id)
     else:
         form = EducationForm()
     context = {"form": form}
@@ -52,7 +53,8 @@ def create_employment(request):
         form = EmploymentForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("show_resume")
+            id = form.instance.resume.id
+            return redirect("show_resume", id=id)
     else:
         form = EmploymentForm()
     context = {"form": form}
@@ -65,7 +67,8 @@ def create_project(request):
         form = ProjectsForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("show_resume")
+            id = form.instance.resume.id
+            return redirect("show_resume", id=id)
     else:
         form = ProjectsForm()
     context = {"form": form}
@@ -78,7 +81,8 @@ def create_skills(request):
         form = SkillsForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("show_resume")
+            id = form.instance.resume.id
+            return redirect("show_resume", id=id)
     else:
         form = SkillsForm()
     context = {"form": form}
@@ -91,7 +95,8 @@ def create_job_description(request):
         form = JobDescriptionsForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("show_resume")
+            id = form.instance.employment.resume.id
+            return redirect("show_resume", id=id)
     else:
         form = JobDescriptionsForm()
     context = {"form": form}
@@ -104,7 +109,8 @@ def create_project_description(request):
         form = ProjectDescriptionsForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("show_resume")
+            id = form.instance.project.resume.id
+            return redirect("show_resume", id=id)
     else:
         form = ProjectDescriptionsForm()
     context = {"form": form}
