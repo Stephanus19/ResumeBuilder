@@ -24,6 +24,11 @@ class EducationForm(ModelForm):
         ]
 
 
+    def __init__(self, author, *args, **kwargs):
+        super(EducationForm, self).__init__(*args, **kwargs)
+        self.fields["resume"].queryset = Resume.objects.filter(author=author)
+
+
 class EmploymentForm(ModelForm):
     class Meta:
         model = Employment
@@ -34,6 +39,11 @@ class EmploymentForm(ModelForm):
             "start_date",
             "end_date"
         ]
+
+
+    def __init__(self, author, *args, **kwargs):
+        super(EmploymentForm, self).__init__(*args, **kwargs)
+        self.fields["resume"].queryset = Resume.objects.filter(author=author)
 
 
 class ProjectsForm(ModelForm):
@@ -47,6 +57,11 @@ class ProjectsForm(ModelForm):
         ]
 
 
+    def __init__(self, author, *args, **kwargs):
+        super(ProjectsForm, self).__init__(*args, **kwargs)
+        self.fields["resume"].queryset = Resume.objects.filter(author=author)
+
+
 class SkillsForm(ModelForm):
     class Meta:
         model = Skill
@@ -54,6 +69,11 @@ class SkillsForm(ModelForm):
             "resume",
             "skills"
         ]
+
+
+    def __init__(self, author, *args, **kwargs):
+        super(SkillsForm, self).__init__(*args, **kwargs)
+        self.fields["resume"].queryset = Resume.objects.filter(author=author)
 
 
 class JobDescriptionsForm(ModelForm):

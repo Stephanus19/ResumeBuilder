@@ -36,13 +36,13 @@ def create_resume(request):
 @login_required
 def create_education(request):
     if request.method == "POST":
-        form = EducationForm(request.POST)
+        form = EducationForm(request.user, request.POST)
         if form.is_valid():
             form.save()
             id = form.instance.resume.id
             return redirect("show_resume", id=id)
     else:
-        form = EducationForm()
+        form = EducationForm(request.user)
     context = {"form": form}
     return render(request, "resumes/create_education.html", context)
 
@@ -50,13 +50,13 @@ def create_education(request):
 @login_required
 def create_employment(request):
     if request.method == "POST":
-        form = EmploymentForm(request.POST)
+        form = EmploymentForm(request.user, request.POST)
         if form.is_valid():
             form.save()
             id = form.instance.resume.id
             return redirect("show_resume", id=id)
     else:
-        form = EmploymentForm()
+        form = EmploymentForm(request.user)
     context = {"form": form}
     return render(request, "resumes/create_employment.html", context)
 
@@ -64,13 +64,13 @@ def create_employment(request):
 @login_required
 def create_project(request):
     if request.method == "POST":
-        form = ProjectsForm(request.POST)
+        form = ProjectsForm(request.user, request.POST)
         if form.is_valid():
             form.save()
             id = form.instance.resume.id
             return redirect("show_resume", id=id)
     else:
-        form = ProjectsForm()
+        form = ProjectsForm(request.user)
     context = {"form": form}
     return render(request, "resumes/create_project.html", context)
 
@@ -78,13 +78,13 @@ def create_project(request):
 @login_required
 def create_skills(request):
     if request.method == "POST":
-        form = SkillsForm(request.POST)
+        form = SkillsForm(request.user, request.POST)
         if form.is_valid():
             form.save()
             id = form.instance.resume.id
             return redirect("show_resume", id=id)
     else:
-        form = SkillsForm()
+        form = SkillsForm(request.user,)
     context = {"form": form}
     return render(request, "resumes/create_skills.html", context)
 
