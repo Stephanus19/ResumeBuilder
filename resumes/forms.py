@@ -16,10 +16,11 @@ class EducationForm(ModelForm):
     class Meta:
         model = Education
         fields = [
+            "resume",
             "school",
             "degree",
             "start_date",
-            "end_date"
+            "end_date",
         ]
 
 
@@ -27,6 +28,7 @@ class EmploymentForm(ModelForm):
     class Meta:
         model = Employment
         fields = [
+            "resume",
             "company",
             "position",
             "start_date",
@@ -38,6 +40,7 @@ class ProjectsForm(ModelForm):
     class Meta:
         model = Projects
         fields = [
+            "resume",
             "project_name",
             "start_date",
             "end_date"
@@ -48,5 +51,24 @@ class SkillsForm(ModelForm):
     class Meta:
         model = Skills
         fields = [
+            "resume",
             "skills"
+        ]
+
+
+class JobDescriptionsForm(ModelForm):
+    class Meta:
+        model = JobDescriptions
+        fields = [
+            "employment",
+            "description",
+        ]
+
+
+class ProjectDescriptionsForm(ModelForm):
+    class Meta:
+        model = ProjectDescriptions
+        fields = [
+            "project",
+            "description",
         ]

@@ -83,3 +83,29 @@ def create_skills(request):
         form = SkillsForm()
     context = {"form": form}
     return render(request, "resumes/create_skills.html", context)
+
+
+@login_required
+def create_job_description(request):
+    if request.method == "POST":
+        form = JobDescriptionsForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("show_resume")
+    else:
+        form = JobDescriptionsForm()
+    context = {"form": form}
+    return render(request, "resumes/create_job_description.html", context)
+
+
+@login_required
+def create_project_description(request):
+    if request.method == "POST":
+        form = ProjectDescriptionsForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("show_resume")
+    else:
+        form = ProjectDescriptionsForm()
+    context = {"form": form}
+    return render(request, "resumes/create_project_description.html", context)
