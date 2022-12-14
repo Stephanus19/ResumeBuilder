@@ -61,14 +61,14 @@ class JobDescriptionsForm(ModelForm):
         model = JobDescriptions
         fields = [
             "employment",
-            "description",
+            "job_description",
         ]
 
 
 class ProjectDescriptionsForm(ModelForm):
     class Meta:
-        model = ProjectDescriptions
+        model = ProjDescriptions
         fields = [
             "project",
-            "description",
+            "proj_description",
         ]
