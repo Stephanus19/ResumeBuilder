@@ -37,6 +37,7 @@
                                 <td>{{ ed.degree}}</td>
                                 <td>{{ ed.start_date|date:"M Y"}}</td>
                                 <td>{{ ed.end_date|date:"M Y"}}</td>
+                                <td><a href="{% url 'delete_education' ed.id %}">Delete education</a></td>
                         </tr>
                     {% endfor %}
                 </tbody>
@@ -59,8 +60,10 @@
                         <td>{{ job.position}}</td>
                         <td>{{ job.start_date|date:"M Y"}}</td>
                         <td>{{ job.end_date|date:"M Y"}}</td>
+                        <td><a href="{% url 'delete_employment' job.id %}">Delete employment</a></td>
                         {% for descr in job.jobdescriptions.all %}
                             <td>{{ descr }}</td >
+                            <td><a href="{% url 'delete_job_description' descr.id %}">Delete description</a></td>
                         {% endfor %}
                     </tr>
                 {% endfor %}
@@ -81,13 +84,21 @@
                         <td>{{ project.project_name }}</td>
                         <td>{{ project.start_date|date:"M Y"}}</td>
                         <td>{{ project.end_date|date:"M Y"}}</td>
+                        <td><a href="{% url 'delete_project' project.id %}">Delete project</a></td>
                         {% for descr in project.projdescriptions.all %}
                             <td>{{ descr }}</td >
+                            <td><a href="{% url 'delete_project_description' descr.id %}">Delete education</a></td>
                         {% endfor %}
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
-        <div>Skills: {% for skill in resume_object.skillset.all %} {{skill}} {% endfor %}</div>
+        <div>Skills:
+            {% for skill in resume_object.skillset.all %}
+                {{skill}}
+                <td><a href="{% url 'delete_skill' skill.id %}">Delete skill</a></td>
+            {% endfor %}</div>
+        <p><a href="{% url 'create_resume_pdf' resume_object.id %}">Download as PDF</a></p>
+        <p><a href="{% url 'delete_resume' resume_object.id %}">Delete Resume</a></p>
     </main>
 {% endblock content %}
