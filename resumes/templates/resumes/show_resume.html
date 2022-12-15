@@ -59,7 +59,9 @@
                         <td>{{ job.position}}</td>
                         <td>{{ job.start_date|date:"M Y"}}</td>
                         <td>{{ job.end_date|date:"M Y"}}</td>
-                        <td>{{ job.employment_descriptions }}</td>
+                        {% for descr in job.jobdescriptions.all %}
+                            <td>{{ descr }}</td >
+                        {% endfor %}
                     </tr>
                 {% endfor %}
             </tbody>
@@ -79,7 +81,9 @@
                         <td>{{ project.project_name }}</td>
                         <td>{{ project.start_date|date:"M Y"}}</td>
                         <td>{{ project.end_date|date:"M Y"}}</td>
-                        <td>{{ project.project_descriptions }}</td>
+                        {% for descr in project.projdescriptions.all %}
+                            <td>{{ descr }}</td >
+                        {% endfor %}
                     </tr>
                 {% endfor %}
             </tbody>

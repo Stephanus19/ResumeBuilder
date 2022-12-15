@@ -64,6 +64,14 @@ class JobDescription(models.Model):
     employment = models.ForeignKey("Employment", related_name="jobdescriptions", on_delete=models.CASCADE, null=True)
 
 
+    def __str__(self):
+        return self.job_description
+
+
 class ProjDescription(models.Model):
     proj_description = models.CharField(max_length=250)
     project = models.ForeignKey("Project", related_name="projdescriptions", on_delete=models.CASCADE, null=True)
+
+
+    def __str__(self):
+        return self.proj_description
