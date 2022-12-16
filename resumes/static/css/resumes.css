@@ -2,7 +2,8 @@
 
 body {
   margin: 0;
-  background: #ecf0f1;
+  background: white;
+  font-family: raleway;
 }
 
 .sidebar {
@@ -21,8 +22,62 @@ body {
   color: white;
   font-size: 20px;
   padding: 5px;
+  text-decoration: none;
+
 }
 
-.section {
+nav a:hover {
+  color: #6185aa
+}
+
+/* .section {
   padding: 20px;
+} */
+
+/* .navsection {
+  padding: 20px;
+} */
+
+/* nav,
+section {
+  border: 10px solid rgba(255, 0, 0, 0.8);
+  /* margin-bottom: 10px;
+  border-radius: 3px;
+
+} */
+
+section {
+  width:75%;
+  float: right;
+  height: 100vh;
+  background-image: url(https://img.freepik.com/free-vector/woman-characters-having-business-conversation-meeting-flat-illustration_74855-14211.jpg?w=2000);
+
+}
+
+/* section::after {
+https://img.freepik.com/free-vector/woman-characters-having-business-conversation-meeting-flat-illustration_74855-14211.jpg?w=2000
+
+} */
+
+nav {
+  width: 25%;
+  float: left;
+}
+
+form {
+  margin: 10px 290px;
+  width: 362px;
+  padding: 25px;
+  background: #f1f1f1;
+  border: 1px solid #e5e5e5;
+}
+
+  /* div {
+    position: relative;
+    margin: 0 0 1.5em;
+  } */
+
+h1 {
+  position: relative;
+  color: #6185aa;
 }
