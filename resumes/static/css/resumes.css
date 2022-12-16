@@ -82,7 +82,7 @@ form {
   margin-left: auto;
   margin-right: auto;
   margin-top: 15%;
-  margin-bottom: 25%;
+  margin-bottom: 0%;
   text-align: left;
 }
 
@@ -106,11 +106,13 @@ form h1 {
 }
 
 
-.table {
+.detailtable {
   table-layout: fixed;
   width: 100%;
   text-align: center;
   padding: 20px;
+  padding-top: 30px;
+  padding-bottom: 0px;
   border-collapse: separate;
   border-spacing: 0ch;
 }
@@ -160,6 +162,13 @@ h1 {
   padding: 20px;
   padding-top: 0px;
   padding-bottom: 0px;
+}
+
+
+h2 {
+  padding-left: 20px;
+  color: #6185aa;
+  font-size: 18px;
 }
 
 
