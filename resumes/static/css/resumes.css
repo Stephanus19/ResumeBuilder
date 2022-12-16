@@ -13,7 +13,7 @@ body {
   flex-wrap: wrap;
 
   height: 100vh;
-  width: 15vw;
+  width: auto;
   font-family: raleway;
   background: #34495e;
 }
@@ -47,10 +47,11 @@ section {
 } */
 
 section {
-  width:75%;
+  width:82%;
   float: right;
   height: 100vh;
-  background-image: url(https://img.freepik.com/free-vector/woman-characters-having-business-conversation-meeting-flat-illustration_74855-14211.jpg?w=2000);
+  background: url(https://img.freepik.com/free-vector/woman-characters-having-business-conversation-meeting-flat-illustration_74855-14211.jpg?w=2000) no-repeat center fixed;
+  background-size: cover;
 
 }
 
@@ -60,7 +61,7 @@ https://img.freepik.com/free-vector/woman-characters-having-business-conversatio
 } */
 
 nav {
-  width: 25%;
+  width: 18%;
   float: left;
 }
 
@@ -80,4 +81,45 @@ form {
 h1 {
   position: relative;
   color: #6185aa;
+  padding: 20px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+
+.table {
+  table-layout: fixed;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  border-collapse: separate;
+  border-spacing: 0ch;
+}
+
+th {
+  background-color: #8a8a8adc;
+  border: 1px solid #8a8a8adc;
+  font-weight: bolder;
+}
+
+td {
+  background-color: #b3b3b3b5;
+  font-weight: bold;
+
+}
+
+td:hover {
+  background-color: #8a8a8adc;
+}
+
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.pdfdl {
+  padding: 20px;
+  padding-top: 0px;
 }
