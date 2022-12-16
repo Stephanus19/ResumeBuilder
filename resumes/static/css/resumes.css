@@ -4,6 +4,8 @@ body {
   margin: 0;
   background: white;
   font-family: raleway;
+  vertical-align: middle;
+
 }
 
 .sidebar {
@@ -30,9 +32,9 @@ nav a:hover {
   color: #6185aa
 }
 
-/* .section {
-  padding: 20px;
-} */
+.section {
+  padding-top: 20px;
+}
 
 /* .navsection {
   padding: 20px;
@@ -40,7 +42,8 @@ nav a:hover {
 
 /* nav,
 section {
-  border: 10px solid rgba(255, 0, 0, 0.8);
+  border: 10px solid rgba(255, 0, 0, 0.8); */
+
   /* margin-bottom: 10px;
   border-radius: 3px;
 
@@ -55,6 +58,8 @@ section {
 
 }
 
+
+
 /* section::after {
 https://img.freepik.com/free-vector/woman-characters-having-business-conversation-meeting-flat-illustration_74855-14211.jpg?w=2000
 
@@ -68,15 +73,86 @@ nav {
 form {
   margin: 10px 290px;
   width: 362px;
-  padding: 25px;
+  padding-left: 25px;
+  padding-bottom: 25px;
   background: #f1f1f1;
   border: 1px solid #e5e5e5;
+
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15%;
+  margin-bottom: 25%;
+  text-align: left;
+}
+
+div.form {
+  display: block;
+  text-align: center;
+
 }
 
   /* div {
     position: relative;
     margin: 0 0 1.5em;
   } */
+
+form h1 {
+  position: relative;
+  color: #6185aa;
+  padding: 20px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+
+.table {
+  table-layout: fixed;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  border-collapse: separate;
+  border-spacing: 0ch;
+}
+
+th {
+  background-color: #8a8a8adc;
+  border: 1px solid #8a8a8adc;
+  font-weight: bolder;
+}
+
+td {
+  background-color: #b3b3b3b5;
+  font-weight: bold;
+
+}
+
+td:hover {
+  background-color: #8a8a8adc;
+}
+
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.pdfdl {
+  padding: 20px;
+  padding-top: 0px;
+}
+
+div.spacer {
+  margin-left: 25px;
+}
+
+.class {
+  float: right;
+  padding-right:5px;
+}
+
+
 
 h1 {
   position: relative;

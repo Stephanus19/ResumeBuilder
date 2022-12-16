@@ -2,9 +2,10 @@
 
 {% block content %}
   <main>
-    <div>
-      <h1>Are you sure?</h1>
+    <div class = "form">
       <form method="post">
+      <h1>Are you sure?</h1>
+
         {% csrf_token %}
         {{ form.as_p }}
         <button>Delete</button>
